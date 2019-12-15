@@ -199,14 +199,6 @@ export const getUserEvents = (userUid, activeTab) => async (
         .where("userUid", "==", userUid)
         .orderBy("eventDate", "desc");
   }
-  // the cause of this quering issue would be probably that it can not
-  // filter attendees by eventDate cause it doesn't occure when filtering by host
-  // it turns out it didn't work either when I got rid of the
-  // .orderBy("eventDate"); and .where("eventDate", ">=", today)
-  // if so, then the problem might have occured from componenetdidmount
-  // found the problem which occur when user clicks
-  // the join button the action can't get the document that the user joined the button
-  // it is likely an issue on firebase functionality
 
   try {
     let querySnap = await query.get();

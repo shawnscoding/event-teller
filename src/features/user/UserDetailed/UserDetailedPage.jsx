@@ -33,7 +33,9 @@ const mapState = (state, ownProps) => {
     userUid,
     auth: state.firebase.auth,
     photos: state.firestore.ordered.photos,
-    requesting: state.firestore.status.requesting
+    requesting: state.firestore.status.requesting,
+    eventsLoading: state.async.loading,
+    events: state.events
   };
 };
 
@@ -44,8 +46,20 @@ class UserDetailedPage extends Component {
     console.log(this.props.userUid);
   }
 
+  changeTab = (e, data) => {
+    this.props.getUserEvents(this.props.userUid, data.activeIndex);
+  };
+
   render() {
-    const { photos, profile, auth, match, requesting } = this.props;
+    const {
+      photos,
+      profile,
+      auth,
+      match,
+      requesting,
+      eventsLoading,
+      events
+    } = this.props;
     const isCurrentUser = auth.uid === match.params.id;
     const loading = Object.values(requesting).some(a => a === true);
     if (loading) return <LoadingComponent />;
@@ -55,7 +69,11 @@ class UserDetailedPage extends Component {
         <UserDetailedDescription profile={profile} />
         <UserDetailedSideBar isCurrentUser={isCurrentUser} />
         {photos && photos.length > 0 && <UserDetailedPhotos photos={photos} />}
-        <UserDetailedEvents />
+        <UserDetailedEvents
+          events={events}
+          eventsLoading={eventsLoading}
+          changeTab={this.changeTab}
+        />
       </Grid>
     );
   }
