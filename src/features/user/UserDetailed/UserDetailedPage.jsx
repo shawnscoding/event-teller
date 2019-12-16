@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Grid } from "semantic-ui-react";
 import { compose } from "redux";
-import { firestoreConnect, isEmpty, isLoaded } from "react-redux-firebase";
+import { firestoreConnect, isEmpty } from "react-redux-firebase";
 import UserDetailedSideBar from "./UserDetailedSiderbar";
 import UserDetailedPhotos from "./UserDetailedPhotos";
 import UserDetailedEvents from "./UserDetailedEvents";

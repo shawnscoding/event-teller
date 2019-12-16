@@ -7,6 +7,7 @@ import {
 import cuid from "cuid";
 import firebase from "../../app/config/firebase";
 import { FETCH_EVENTS } from "../event/eventConstants";
+import { getFirebase } from "react-redux-firebase";
 
 export const updateProfile = user => async (
   dispatch,
