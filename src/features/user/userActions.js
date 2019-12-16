@@ -7,7 +7,6 @@ import {
 import cuid from "cuid";
 import firebase from "../../app/config/firebase";
 import { FETCH_EVENTS } from "../event/eventConstants";
-import { getFirebase } from "react-redux-firebase";
 
 export const updateProfile = user => async (
   dispatch,
@@ -203,11 +202,7 @@ export const getUserEvents = (userUid, activeTab) => async (
 
   try {
     let querySnap = await query.get();
-    // console.log(query);
-    // console.log(eventsRef);
-    // let testSnap = await eventsRef.get();
     let events = [];
-    console.log(querySnap.docs);
 
     for (let i = 0; i < querySnap.docs.length; i++) {
       let evt = await firestore
@@ -215,6 +210,7 @@ export const getUserEvents = (userUid, activeTab) => async (
         .doc(querySnap.docs[i].data().eventId)
         .get();
       events.push({ ...evt.data(), id: evt.id });
+      console.log({ events });
       console.log(events);
     }
 
