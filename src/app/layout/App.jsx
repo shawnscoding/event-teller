@@ -28,11 +28,12 @@ class App extends Component {
                 <Switch key={this.props.location.key}>
                   <Route exact path="/events" component={EventDashboard} />
                   <Route path="/test" component={TestComponent} />
-                  <Route path="/events/:id" component={EventDetailedPage} />
+                  <Route path="/event/:id" component={EventDetailedPage} />
                   <Route
-                    path={UserIsAuthenticated(["/createEvent", "/manage/:id"])}
-                    component={EventForm}
+                    path={["/createEvent", "/manage/:id"]}
+                    component={UserIsAuthenticated(EventForm)}
                   />
+
                   <Route
                     path="/people"
                     component={UserIsAuthenticated(PeopleDashboard)}

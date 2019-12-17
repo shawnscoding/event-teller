@@ -168,7 +168,7 @@ export const goingToEvent = event => async (dispatch, getState) => {
       });
       await transaction.set(eventAttendeeDocRef, {
         eventId: event.id,
-        userUId: user.uid,
+        userUid: user.uid,
         eventDate: event.date,
         host: false
       });
@@ -249,7 +249,6 @@ export const getUserEvents = (userUid, activeTab) => async (
         .doc(querySnap.docs[i].data().eventId)
         .get();
       events.push({ ...evt.data(), id: evt.id });
-      console.log({ events });
     }
 
     dispatch({ type: FETCH_EVENTS, payload: { events } });
