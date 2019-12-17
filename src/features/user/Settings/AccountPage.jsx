@@ -33,7 +33,6 @@ const AccountPage = ({
   updatePassword,
   providerId
 }) => {
-  // console.log(updatePassword);
   return (
     <Segment>
       <Header dividing size="large" content="Account" />
