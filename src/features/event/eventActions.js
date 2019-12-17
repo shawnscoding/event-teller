@@ -135,12 +135,10 @@ export const getEventForDashboard = lastEvent => async (dispatch, getState) => {
     }
 
     let events = [];
-    // console.log(querySnap);
     for (let i = 0; i < querySnap.docs.length; i++) {
       let evt = { ...querySnap.docs[i].data(), id: querySnap.docs[i].id };
       events.push(evt);
     }
-    // console.log(events);
     dispatch({ type: FETCH_EVENTS, payload: { events } });
     dispatch(asyncActionFinish());
     return querySnap;

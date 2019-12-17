@@ -29,9 +29,13 @@ const UserDetailedHeader = ({ profile }) => {
             </LazyLoad>
 
             <Item.Content verticalAlign="bottom">
-              <Header as="h1">{profile.displayName}</Header>
+              <Header as="h1">
+                {profile.displayName ? profile.displayName : null}
+              </Header>
               <br />
-              <Header as="h3">{profile.occupation}</Header>
+              <Header as="h3">
+                {profile.occupation ? profile.occupation : null}
+              </Header>
               <br />
               <Header as="h3">
                 {age} {age !== "unknown age" && `, Lives in ${profile.city} `}
