@@ -15,15 +15,22 @@ const UserDetailedDescription = ({ profile }) => {
           <Grid columns={2}>
             <Grid.Column width={10}>
               <Header icon="smile" content={`About ${profile.displayName}`} />
-              <p>
-                I am a: <strong>{profile.occupation || "tbn"}</strong>
-              </p>
-              <p>
-                Originally from <strong>{profile.origin || "tbn"}</strong>
-              </p>
-              <p>
-                Member Since: <strong>{createdAt}</strong>
-              </p>
+              {profile.occupation ? (
+                <p>
+                  I am a: <strong> {profile.occupation}</strong>
+                </p>
+              ) : null}
+              {profile.origin ? (
+                <p>
+                  Originally from <strong>{profile.origin}</strong>
+                </p>
+              ) : null}
+              {createdAt ? (
+                <p>
+                  Member Since: <strong>{createdAt}</strong>
+                </p>
+              ) : null}
+
               <p>{profile.about}</p>
             </Grid.Column>
             <Grid.Column width={6}>

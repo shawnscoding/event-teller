@@ -19,7 +19,7 @@ const HomePage = ({ history }) => {
             alt="logo"
             style={{ marginBottom: 12 }}
           />
-          Re-vents
+          Event Teller
         </Header>
         <Button
           onClick={() => history.push("/events")}
