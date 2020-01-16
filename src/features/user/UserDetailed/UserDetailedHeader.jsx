@@ -38,7 +38,9 @@ const UserDetailedHeader = ({ profile }) => {
               </Header>
               <br />
               <Header as="h3">
-                {age} {age !== "unknown age" && `, Lives in ${profile.city} `}
+                {age}
+                {age !== "unknown age" &&
+                  `${profile.city && `, lives in ${profile.city}`} `}
               </Header>
             </Item.Content>
           </Item>

@@ -1,11 +1,44 @@
 import React from "react";
+import PeopleProfile from "./PeopleProfile";
+import { Grid, Loader } from "semantic-ui-react";
+import { connect } from "react-redux";
+import {
+  getUsersForPeoplePage,
+  syncUsersWithReducer
+} from "./../../users/usersActions";
 
-const PeopleDashboard = () => {
-  return (
-    <div>
-      <h1>People Dashboard</h1>
-    </div>
-  );
+const mapState = state => ({
+  users: state.users.users,
+  loading: state.async.loading
+});
+
+const actions = {
+  syncUsersWithReducer
 };
 
-export default PeopleDashboard;
+class PeopleDashboard extends React.Component {
+  async componentDidMount() {
+    const { syncUsersWithReducer } = this.props;
+    const users = await getUsersForPeoplePage();
+    syncUsersWithReducer(users);
+  }
+
+  render() {
+    const { users, loading } = this.props;
+    console.log(loading);
+    return (
+      <React.Fragment>
+        <Grid>
+          {users &&
+            users.map((user, index) => (
+              <Grid.Column key={index} width={4}>
+                <PeopleProfile user={user} loading={loading} />
+              </Grid.Column>
+            ))}
+        </Grid>
+      </React.Fragment>
+    );
+  }
+}
+
+export default connect(mapState, actions)(PeopleDashboard);

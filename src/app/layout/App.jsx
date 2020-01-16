@@ -9,7 +9,6 @@ import PeopleDashboard from "./../../features/user/PeopleDashboard/PeopleDashboa
 import SettingsDashboard from "./../../features/user/Settings/SettingsDashboard";
 import UserDetailedPage from "./../../features/user/UserDetailed/UserDetailedPage";
 import EventForm from "../../features/event/EventForm/EventForm";
-import TestComponent from "./../../features/testarea/TestComponent";
 import ModalManager from "../../features/modals/ModalManager";
 import { UserIsAuthenticated } from "../../features/auth/authWrapper";
 import MyEventsPage from "./../../features/user/MyEvents/MyEventsPage";
@@ -29,7 +28,6 @@ class App extends Component {
               <Container className="main">
                 <Switch key={this.props.location.key}>
                   <Route exact path="/events" component={EventDashboard} />
-                  <Route path="/test" component={TestComponent} />
                   <Route path="/event/:id" component={EventDetailedPage} />
                   <Route
                     path={["/createEvent", "/manage/:id"]}
