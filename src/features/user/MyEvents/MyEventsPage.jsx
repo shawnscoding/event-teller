@@ -13,7 +13,6 @@ const actions = {
 };
 
 const mapState = (state, ownProps) => {
-  console.log(ownProps);
   let userUid = null;
   let profile = {};
   if (ownProps.match.params.id === state.auth.uid) {

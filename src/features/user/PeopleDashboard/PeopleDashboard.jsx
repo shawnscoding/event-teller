@@ -1,6 +1,6 @@
 import React from "react";
 import PeopleProfile from "./PeopleProfile";
-import { Grid, Loader } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import { connect } from "react-redux";
 import {
   getUsersForPeoplePage,
@@ -25,7 +25,6 @@ class PeopleDashboard extends React.Component {
 
   render() {
     const { users, loading } = this.props;
-    console.log(loading);
     return (
       <React.Fragment>
         <Grid>
