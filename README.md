@@ -2,7 +2,7 @@
 
 Facebook inspired app built in React hosting on Firebase https://revents-ef74b.web.app/
 
-### ``
+### how to run this app in dev mode
 
 In the project directory, you can run:
 
