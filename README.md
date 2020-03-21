@@ -1,15 +1,33 @@
-### `Facebook inspired app built in React`
+### `Facebook inspired app built in React js`
 
-Facebook inspired app built in React hosting on Firebase https://revents-ef74b.web.app/
+Facebook inspired app built in React js, https://revents-ef74b.web.app/
 
-### `how to run this app in dev mode`
+### 앱요약
 
-In the project directory, you can run:
+실력 향상을 목적으로 만든 페이스북 형 앱입니다.
+라이브 채팅, 이벤트 포스팅, 이벤트 참가하기 취소하기, 구글맵, 사진 포스팅 등 페이스북이 갖춘 주요 기능들을 모두 구현했습니다. 사용 tool은 React js, Redux, firebase, Semantic UI 입니다.
 
-### `npm start`
+### 앱 사용법
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+제 포트폴리오 페이지 하단에 앱 데모 비디오가 있습니다.
+https://shawnsportfolio.herokuapp.com/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+로그인은 회원가입을 하거나, 구글 또는 페이스북 계정으로 로그인해 주십시오.
+
+### 개발 동기
+
+리액트를 이용한 프로그램 개발 실력 향상에 페이스북이 최적화라고 생각했습니다.
+리액트는 페이스북처럼 component 간 관계가 복잡하고, 유저 활동에 즉각적으로 반응할 수 있는 웹사이트 UI를 구현하는데 최고의 라이브러리라고 생각합니다. 또한, 라이브 채팅, 이벤트 참가, 취소처럼 페이스북이 가진 복잡하면서, 현대 많은 웹사이트에서 필요한 기능들을 구현해보면서 실력이 많이 상승할 것이라고 생각했습니다.
+
+### 배운 점
+
+먼저, 이 프로젝트에서 다소 어려운 기능을 구현하면서 큰 자신감을 얻었습니다. 특히 구글 맵, live chat, 이미지 포스팅처럼 제가 할 수 없을 것만 같은 기능들을 완료한 후, 정말 기뻤고 머지않아 훌륭한 개발자가 될 수 있을 거라는 자신감이 들었습니다.
+
+두 번째로, Nosql Database 구축이 Sql Database 구축 보다 일반적으로 더 까다롭다는 것을 알게 되었습니다.
+상황과 데이터 흐름에 따라 차이가 있겠지만 이번 프로젝트에 Nosql Database 로직 작성은 Sql Database로 로직을 작성할 때보다 더 많은 로직 작성이 요구되었습니다.
+
+마지막으로, 앞으로 더 의미 있는 앱을 만들자고 다짐하였습니다.
+이번 프로젝트를 이행하면서 많은 흥미를 느꼈지만, 개발이 길어질수록 동기부여가 되지 않았습니다.
+제가 이 프로그램을 아무리 잘 만든다고 한들, 사용할 유저가 없기 때문입니다.
+그래서 계획했던 live-message 수정, 삭제 그리고 다른 유저 팔로우 기능은 만들지 않았습니다.
+앞으로는 보상을 받지 못하더라도 친구들이나 가족, 또는 제 자신이 필요한 앱을 만들 것을 결심했습니다.
