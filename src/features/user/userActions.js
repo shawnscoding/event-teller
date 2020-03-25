@@ -15,7 +15,6 @@ export const updateProfile = user => async (
 ) => {
   const firebase = getFirebase();
   const { isLoaded, isEmpty, ...updatedUser } = user;
-  // useful way of getting rid of some props
   try {
     await firebase.updateProfile(updatedUser);
     toastr.success("Success", "Your profile has been updated");

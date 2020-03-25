@@ -41,6 +41,7 @@ export const updateEvent = event => {
     try {
       dispatch(asyncActionStart());
       let eventDocRef = firestore.collection("events").doc(event.id);
+      // find out why zero
       let dateEqual = getState().firestore.ordered.events[0].date.isEqual(
         event.date
       );
@@ -84,6 +85,7 @@ export const cancelToggle = (cancelled, eventId) => async (
   getState,
   { getFirestore }
 ) => {
+  // reuse toastr's incredible functionality
   const firestore = getFirestore();
   const message = cancelled
     ? "Are you sure you want to cancel the evnet?"
